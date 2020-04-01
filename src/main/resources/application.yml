@@ -1,0 +1,17 @@
+server:
+  address: 0.0.0.0
+  port: 8081
+  context-path: /api
+  tomcat:
+    basedir: /var/chan/log
+    accesslog:
+      enabled: true
+      buffered: true
+      pattern: "%t %{sessionId}r %H %m %a %{User-Agent}i %{Content-Type}i %{Authorization}i %B %A %p %U %q %s %{Content-Type}o %{Content-Length}o %Dms"
+      directory: chan-api
+
+spring:
+  datasource:
+    url: jdbc:postgresql://nap-postgres-host:5432/qtz
+    username: nap_admin
+    password: r00tme
